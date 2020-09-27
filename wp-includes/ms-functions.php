@@ -952,7 +952,7 @@ function wpmu_signup_blog_notification( $domain, $path, $title, $user_login, $us
 	$admin_email = get_site_option( 'admin_email' );
 
 	if ( '' === $admin_email ) {
-		$admin_email = 'support@' . $_SERVER['SERVER_NAME'];
+		$admin_email = 'support@' . wp_parse_url( network_home_url(), PHP_URL_HOST );
 	}
 
 	$from_name       = ( '' !== get_site_option( 'site_name' ) ) ? esc_html( get_site_option( 'site_name' ) ) : 'WordPress';
@@ -1079,7 +1079,7 @@ function wpmu_signup_user_notification( $user_login, $user_email, $key, $meta = 
 	$admin_email = get_site_option( 'admin_email' );
 
 	if ( '' === $admin_email ) {
-		$admin_email = 'support@' . $_SERVER['SERVER_NAME'];
+		$admin_email = 'support@' . wp_parse_url( network_home_url(), PHP_URL_HOST );
 	}
 
 	$from_name       = ( '' !== get_site_option( 'site_name' ) ) ? esc_html( get_site_option( 'site_name' ) ) : 'WordPress';
@@ -1663,7 +1663,7 @@ We hope you enjoy your new site. Thanks!
 	$admin_email = get_site_option( 'admin_email' );
 
 	if ( '' === $admin_email ) {
-		$admin_email = 'support@' . $_SERVER['SERVER_NAME'];
+		$admin_email = 'support@' . wp_parse_url( network_home_url(), PHP_URL_HOST );
 	}
 
 	$from_name       = ( '' !== get_site_option( 'site_name' ) ) ? esc_html( get_site_option( 'site_name' ) ) : 'WordPress';
@@ -1755,7 +1755,7 @@ function wpmu_welcome_user_notification( $user_id, $password, $meta = array() ) 
 	$admin_email = get_site_option( 'admin_email' );
 
 	if ( '' === $admin_email ) {
-		$admin_email = 'support@' . $_SERVER['SERVER_NAME'];
+		$admin_email = 'support@' . wp_parse_url( network_home_url(), PHP_URL_HOST );
 	}
 
 	$from_name       = ( '' !== get_site_option( 'site_name' ) ) ? esc_html( get_site_option( 'site_name' ) ) : 'WordPress';
@@ -2835,18 +2835,18 @@ All at ###SITENAME###
 	 * @since 4.9.0
 	 *
 	 * @param array $email_change_email {
-	 *            Used to build wp_mail().
+	 *     Used to build wp_mail().
 	 *
-	 *            @type string $to      The intended recipient.
-	 *            @type string $subject The subject of the email.
-	 *            @type string $message The content of the email.
-	 *                The following strings have a special meaning and will get replaced dynamically:
-	 *                - ###OLD_EMAIL### The old network admin email address.
-	 *                - ###NEW_EMAIL### The new network admin email address.
-	 *                - ###SITENAME###  The name of the network.
-	 *                - ###SITEURL###   The URL to the site.
-	 *            @type string $headers Headers.
-	 *        }
+	 *     @type string $to      The intended recipient.
+	 *     @type string $subject The subject of the email.
+	 *     @type string $message The content of the email.
+	 *         The following strings have a special meaning and will get replaced dynamically:
+	 *         - ###OLD_EMAIL### The old network admin email address.
+	 *         - ###NEW_EMAIL### The new network admin email address.
+	 *         - ###SITENAME###  The name of the network.
+	 *         - ###SITEURL###   The URL to the site.
+	 *     @type string $headers Headers.
+	 * }
 	 * @param string $old_email  The old network admin email address.
 	 * @param string $new_email  The new network admin email address.
 	 * @param int    $network_id ID of the network.

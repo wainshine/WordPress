@@ -87,7 +87,7 @@ final class WP_Privacy_Policy_Content {
 
 		// Remove the extra values added to the meta.
 		foreach ( $old as $key => $data ) {
-			if ( ! empty( $data['removed'] ) ) {
+			if ( ! is_array( $data ) || ! empty( $data['removed'] ) ) {
 				unset( $old[ $key ] );
 				continue;
 			}
@@ -424,7 +424,7 @@ final class WP_Privacy_Policy_Content {
 				$content .= '</div>';
 			}
 
-			$content .= '<a href="#wpbody" class="return-to-top"><span aria-hidden="true">&uarr; </span> ' . __( 'Return to Top' ) . '</a>';
+			$content .= '<a href="#wpbody" class="return-to-top"><span aria-hidden="true">&uarr; </span> ' . __( 'Return to top' ) . '</a>';
 
 			$content .= '</div>'; // End of .privacy-text-section.
 		}

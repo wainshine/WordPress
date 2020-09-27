@@ -110,32 +110,15 @@ class WP_Sitemaps {
 	 * @since 5.5.0
 	 */
 	public function register_sitemaps() {
-		/**
-		 * Filters the list of registered sitemap providers.
-		 *
-		 * @since 5.5.0
-		 *
-		 * @param array $providers {
-		 *     Array of WP_Sitemaps_Provider objects keyed by their name.
-		 *
-		 *     @type WP_Sitemaps_Posts      $posts      The WP_Sitemaps_Posts object.
-		 *     @type WP_Sitemaps_Taxonomies $taxonomies The WP_Sitemaps_Taxonomies object.
-		 *     @type WP_Sitemaps_Users      $users      The WP_Sitemaps_Users object.
-		 * }
-		 */
-		$providers = apply_filters(
-			'wp_sitemaps_register_providers',
-			array(
-				'posts'      => new WP_Sitemaps_Posts(),
-				'taxonomies' => new WP_Sitemaps_Taxonomies(),
-				'users'      => new WP_Sitemaps_Users(),
-			)
+		$providers = array(
+			'posts'      => new WP_Sitemaps_Posts(),
+			'taxonomies' => new WP_Sitemaps_Taxonomies(),
+			'users'      => new WP_Sitemaps_Users(),
 		);
 
-		// Register each supported provider.
 		/* @var WP_Sitemaps_Provider $provider */
 		foreach ( $providers as $name => $provider ) {
-			$this->registry->add_sitemap( $name, $provider );
+			$this->registry->add_provider( $name, $provider );
 		}
 	}
 
@@ -212,7 +195,7 @@ class WP_Sitemaps {
 			exit;
 		}
 
-		$provider = $this->registry->get_sitemap( $sitemap );
+		$provider = $this->registry->get_provider( $sitemap );
 
 		if ( ! $provider ) {
 			return;
@@ -241,7 +224,7 @@ class WP_Sitemaps {
 	 * @since 5.5.0
 	 *
 	 * @param bool     $bypass Pass-through of the pre_handle_404 filter value.
-	 * @param WP_Query $query The WP_Query object.
+	 * @param WP_Query $query  The WP_Query object.
 	 * @return bool Bypass value.
 	 */
 	public function redirect_sitemapxml( $bypass, $query ) {
@@ -267,7 +250,7 @@ class WP_Sitemaps {
 	 * @since 5.5.0
 	 *
 	 * @param string $output robots.txt output.
-	 * @param bool   $public Whether the site is public or not.
+	 * @param bool   $public Whether the site is public.
 	 * @return string The robots.txt output.
 	 */
 	public function add_robots( $output, $public ) {

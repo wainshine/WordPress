@@ -59,7 +59,7 @@ class WP_Site_Query {
 	 * Date query container.
 	 *
 	 * @since 4.6.0
-	 * @var object WP_Date_Query
+	 * @var WP_Date_Query A date query instance.
 	 */
 	public $date_query = false;
 
@@ -291,14 +291,17 @@ class WP_Site_Query {
 		$site_data = null;
 
 		/**
-		 * Filter the site data before the get_sites query takes place.
+		 * Filters the site data before the get_sites query takes place.
 		 *
-		 * Return a non-null value to bypass WordPress's default site queries.
+		 * Return a non-null value to bypass WordPress' default site queries.
 		 *
-		 * The expected return type from this filter depends on the value passed in the request query_vars:
-		 * When `$this->query_vars['count']` is set, the filter should return the site count as an int.
-		 * When `'ids' === $this->query_vars['fields']`, the filter should return an array of site IDs.
-		 * Otherwise the filter should return an array of WP_Site objects.
+		 * The expected return type from this filter depends on the value passed
+		 * in the request query vars:
+		 * - When `$this->query_vars['count']` is set, the filter should return
+		 *   the site count as an integer.
+		 * - When `'ids' === $this->query_vars['fields']`, the filter should return
+		 *   an array of site IDs.
+		 * - Otherwise the filter should return an array of WP_Site objects.
 		 *
 		 * @since 5.2.0
 		 *

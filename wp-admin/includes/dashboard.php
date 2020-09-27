@@ -965,10 +965,10 @@ function wp_dashboard_recent_posts( $args ) {
 			} elseif ( gmdate( 'Y-m-d', $time ) == $tomorrow ) {
 				$relative = __( 'Tomorrow' );
 			} elseif ( gmdate( 'Y', $time ) !== $year ) {
-				/* translators: Date and time format for recent posts on the dashboard, from a different calendar year, see https://www.php.net/date */
+				/* translators: Date and time format for recent posts on the dashboard, from a different calendar year, see https://www.php.net/manual/datetime.format.php */
 				$relative = date_i18n( __( 'M jS Y' ), $time );
 			} else {
-				/* translators: Date and time format for recent posts on the dashboard, see https://www.php.net/date */
+				/* translators: Date and time format for recent posts on the dashboard, see https://www.php.net/manual/datetime.format.php */
 				$relative = date_i18n( __( 'M jS' ), $time );
 			}
 
@@ -1167,7 +1167,7 @@ function wp_dashboard_trigger_widget_control( $widget_control_id = false ) {
  * @since 2.5.0
  *
  * @param string $widget_id
- * @param array $form_inputs
+ * @param array  $form_inputs
  */
 function wp_dashboard_rss_control( $widget_id, $form_inputs = array() ) {
 	$widget_options = get_option( 'dashboard_widget_options' );

@@ -82,7 +82,7 @@ this["wp"] = this["wp"] || {}; this["wp"]["blockDirectory"] =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 439);
+/******/ 	return __webpack_require__(__webpack_require__.s = 444);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -108,7 +108,67 @@ this["wp"] = this["wp"] || {}; this["wp"]["blockDirectory"] =
 
 /***/ }),
 
-/***/ 13:
+/***/ 100:
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["notices"]; }());
+
+/***/ }),
+
+/***/ 137:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(0);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+/**
+ * WordPress dependencies
+ */
+ // Disable reason: JSDoc linter doesn't seem to parse the union (`&`) correctly.
+
+/* eslint-disable jsdoc/valid-types */
+
+/** @typedef {{icon: JSX.Element, size?: number} & import('react').ComponentPropsWithoutRef<'SVG'>} IconProps */
+
+/* eslint-enable jsdoc/valid-types */
+
+/**
+ * Return an SVG icon.
+ *
+ * @param {IconProps} props icon is the SVG component to render
+ *                          size is a number specifiying the icon size in pixels
+ *                          Other props will be passed to wrapped SVG component
+ *
+ * @return {JSX.Element}  Icon component
+ */
+
+function Icon(_ref) {
+  var icon = _ref.icon,
+      _ref$size = _ref.size,
+      size = _ref$size === void 0 ? 24 : _ref$size,
+      props = Object(_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(_ref, ["icon", "size"]);
+
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["cloneElement"])(icon, _objectSpread({
+    width: size,
+    height: size
+  }, props));
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (Icon);
+
+
+/***/ }),
+
+/***/ 14:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -163,60 +223,7 @@ function _slicedToArray(arr, i) {
 
 /***/ }),
 
-/***/ 131:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(14);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(0);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-/**
- * WordPress dependencies
- */
- // Disable reason: JSDoc linter doesn't seem to parse the union (`&`) correctly.
-
-/* eslint-disable jsdoc/valid-types */
-
-/** @typedef {{icon: JSX.Element, size?: number} & import('react').ComponentPropsWithoutRef<'SVG'>} IconProps */
-
-/* eslint-enable jsdoc/valid-types */
-
-/**
- * Return an SVG icon.
- *
- * @param {IconProps} props icon is the SVG component to render
- *                          size is a number specifiying the icon size in pixels
- *                          Other props will be passed to wrapped SVG component
- *
- * @return {JSX.Element}  Icon component
- */
-
-function Icon(_ref) {
-  var icon = _ref.icon,
-      _ref$size = _ref.size,
-      size = _ref$size === void 0 ? 24 : _ref$size,
-      props = Object(_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(_ref, ["icon", "size"]);
-
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["cloneElement"])(icon, _objectSpread({
-    width: size,
-    height: size
-  }, props));
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (Icon);
-
-
-/***/ }),
-
-/***/ 14:
+/***/ 15:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -244,7 +251,7 @@ function _objectWithoutProperties(source, excluded) {
 
 /***/ }),
 
-/***/ 17:
+/***/ 18:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -288,17 +295,10 @@ function _toConsumableArray(arr) {
 
 /***/ }),
 
-/***/ 23:
+/***/ 24:
 /***/ (function(module, exports) {
 
 (function() { module.exports = this["regeneratorRuntime"]; }());
-
-/***/ }),
-
-/***/ 256:
-/***/ (function(module, exports) {
-
-(function() { module.exports = this["wp"]["editPost"]; }());
 
 /***/ }),
 
@@ -319,7 +319,14 @@ function _arrayLikeToArray(arr, len) {
 
 /***/ }),
 
-/***/ 281:
+/***/ 261:
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["editPost"]; }());
+
+/***/ }),
+
+/***/ 286:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -344,7 +351,7 @@ var starFilled = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createE
 
 /***/ }),
 
-/***/ 282:
+/***/ 287:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -393,13 +400,6 @@ function _unsupportedIterableToArray(o, minLen) {
 /***/ (function(module, exports) {
 
 (function() { module.exports = this["wp"]["components"]; }());
-
-/***/ }),
-
-/***/ 30:
-/***/ (function(module, exports) {
-
-(function() { module.exports = this["wp"]["url"]; }());
 
 /***/ }),
 
@@ -472,7 +472,7 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 
 /***/ }),
 
-/***/ 439:
+/***/ 444:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -505,7 +505,7 @@ __webpack_require__.d(actions_namespaceObject, "setErrorNotice", function() { re
 __webpack_require__.d(actions_namespaceObject, "clearErrorNotice", function() { return clearErrorNotice; });
 
 // EXTERNAL MODULE: external {"this":["wp","notices"]}
-var external_this_wp_notices_ = __webpack_require__(92);
+var external_this_wp_notices_ = __webpack_require__(100);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
 var defineProperty = __webpack_require__(5);
@@ -517,7 +517,7 @@ var external_this_wp_data_ = __webpack_require__(4);
 var external_this_wp_dataControls_ = __webpack_require__(36);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js + 2 modules
-var toConsumableArray = __webpack_require__(17);
+var toConsumableArray = __webpack_require__(18);
 
 // EXTERNAL MODULE: external {"this":"lodash"}
 var external_this_lodash_ = __webpack_require__(2);
@@ -804,81 +804,68 @@ function getErrorNoticeForBlock(state, blockId) {
 }
 
 // EXTERNAL MODULE: external {"this":"regeneratorRuntime"}
-var external_this_regeneratorRuntime_ = __webpack_require__(23);
+var external_this_regeneratorRuntime_ = __webpack_require__(24);
 var external_this_regeneratorRuntime_default = /*#__PURE__*/__webpack_require__.n(external_this_regeneratorRuntime_);
 
 // EXTERNAL MODULE: external {"this":["wp","i18n"]}
 var external_this_wp_i18n_ = __webpack_require__(1);
 
-// EXTERNAL MODULE: external {"this":["wp","url"]}
-var external_this_wp_url_ = __webpack_require__(30);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
+var asyncToGenerator = __webpack_require__(50);
+
+// EXTERNAL MODULE: external {"this":["wp","apiFetch"]}
+var external_this_wp_apiFetch_ = __webpack_require__(45);
+var external_this_wp_apiFetch_default = /*#__PURE__*/__webpack_require__.n(external_this_wp_apiFetch_);
 
 // CONCATENATED MODULE: ./node_modules/@wordpress/block-directory/build-module/store/controls.js
+
+
+
 /**
  * WordPress dependencies
  */
 
 /**
- * Loads a JavaScript file.
+ * Load an asset for a block.
  *
- * @param {string} asset The url for this file.
+ * This function returns a Promise that will resolve once the asset is loaded,
+ * or in the case of Stylesheets and Inline Javascript, will resolve immediately.
+ *
+ * @param {HTMLElement} el A HTML Element asset to inject.
  *
  * @return {Promise} Promise which will resolve when the asset is loaded.
  */
 
-var controls_loadScript = function loadScript(asset) {
-  if (!asset || !/\.js$/.test(Object(external_this_wp_url_["getPath"])(asset))) {
-    return Promise.reject(new Error('No script found.'));
-  }
-
+var loadAsset = function loadAsset(el) {
   return new Promise(function (resolve, reject) {
-    var existing = document.querySelector("script[src=\"".concat(asset, "\"]"));
+    /*
+     * Reconstruct the passed element, this is required as inserting the Node directly
+     * won't always fire the required onload events, even if the asset wasn't already loaded.
+     */
+    var newNode = document.createElement(el.nodeName);
+    ['id', 'rel', 'src', 'href', 'type'].forEach(function (attr) {
+      if (el[attr]) {
+        newNode[attr] = el[attr];
+      }
+    }); // Append inline <script> contents.
 
-    if (existing) {
-      existing.parentNode.removeChild(existing);
+    if (el.innerHTML) {
+      newNode.appendChild(document.createTextNode(el.innerHTML));
     }
 
-    var script = document.createElement('script');
-    script.src = asset;
-
-    script.onload = function () {
+    newNode.onload = function () {
       return resolve(true);
     };
 
-    script.onerror = function () {
-      return reject(new Error('Error loading script.'));
+    newNode.onerror = function () {
+      return reject(new Error('Error loading asset.'));
     };
 
-    document.body.appendChild(script);
-  });
-};
-/**
- * Loads a CSS file.
- *
- * @param {string} asset The url for this file.
- *
- * @return {Promise} Promise which will resolve when the asset is added.
- */
+    document.body.appendChild(newNode); // Resolve Stylesheets and Inline JavaScript immediately.
 
-var controls_loadStyle = function loadStyle(asset) {
-  if (!asset || !/\.css$/.test(Object(external_this_wp_url_["getPath"])(asset))) {
-    return Promise.reject(new Error('No style found.'));
-  }
-
-  return new Promise(function (resolve, reject) {
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = asset;
-
-    link.onload = function () {
-      return resolve(true);
-    };
-
-    link.onerror = function () {
-      return reject(new Error('Error loading style.'));
-    };
-
-    document.body.appendChild(link);
+    if ('link' === newNode.nodeName.toLowerCase() || 'script' === newNode.nodeName.toLowerCase() && !newNode.src) {
+      resolve();
+    }
   });
 };
 /**
@@ -896,12 +883,73 @@ function loadAssets(assets) {
   };
 }
 var controls = {
-  LOAD_ASSETS: function LOAD_ASSETS(_ref) {
-    var assets = _ref.assets;
-    var scripts = assets.map(function (asset) {
-      return Object(external_this_wp_url_["getPath"])(asset).match(/\.js$/) !== null ? controls_loadScript(asset) : controls_loadStyle(asset);
+  LOAD_ASSETS: function LOAD_ASSETS() {
+    /*
+     * Fetch the current URL (post-new.php, or post.php?post=1&action=edit) and compare the
+     * Javascript and CSS assets loaded between the pages. This imports the required assets
+     * for the block into the current page while not requiring that we know them up-front.
+     * In the future this can be improved by reliance upon block.json and/or a script-loader
+     * dependancy API.
+     */
+    return external_this_wp_apiFetch_default()({
+      url: document.location.href,
+      parse: false
+    }).then(function (response) {
+      return response.text();
+    }).then(function (data) {
+      var doc = new window.DOMParser().parseFromString(data, 'text/html');
+      var newAssets = Array.from(doc.querySelectorAll('link[rel="stylesheet"],script')).filter(function (asset) {
+        return asset.id && !document.getElementById(asset.id);
+      });
+      return new Promise( /*#__PURE__*/function () {
+        var _ref = Object(asyncToGenerator["a" /* default */])( /*#__PURE__*/external_this_regeneratorRuntime_default.a.mark(function _callee(resolve, reject) {
+          var i;
+          return external_this_regeneratorRuntime_default.a.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.t0 = external_this_regeneratorRuntime_default.a.keys(newAssets);
+
+                case 1:
+                  if ((_context.t1 = _context.t0()).done) {
+                    _context.next = 13;
+                    break;
+                  }
+
+                  i = _context.t1.value;
+                  _context.prev = 3;
+                  _context.next = 6;
+                  return loadAsset(newAssets[i]);
+
+                case 6:
+                  _context.next = 11;
+                  break;
+
+                case 8:
+                  _context.prev = 8;
+                  _context.t2 = _context["catch"](3);
+                  reject(_context.t2);
+
+                case 11:
+                  _context.next = 1;
+                  break;
+
+                case 13:
+                  resolve();
+
+                case 14:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee, null, [[3, 8]]);
+        }));
+
+        return function (_x, _x2) {
+          return _ref.apply(this, arguments);
+        };
+      }());
     });
-    return Promise.all(scripts);
   }
 };
 /* harmony default export */ var store_controls = (controls);
@@ -1003,29 +1051,20 @@ function actions_installBlockType(block) {
 
         case 4:
           _context.prev = 4;
-
-          if (!(!Array.isArray(assets) || !assets.length)) {
-            _context.next = 7;
-            break;
-          }
-
-          throw new Error(Object(external_this_wp_i18n_["__"])('Block has no assets.'));
-
-        case 7:
-          _context.next = 9;
+          _context.next = 7;
           return setIsInstalling(block.id, true);
 
-        case 9:
+        case 7:
           // If we have a wp:plugin link, the plugin is installed but inactive.
           url = getPluginUrl(block);
           links = {};
 
           if (!url) {
-            _context.next = 16;
+            _context.next = 14;
             break;
           }
 
-          _context.next = 14;
+          _context.next = 12;
           return Object(external_this_wp_dataControls_["apiFetch"])({
             url: url,
             data: {
@@ -1034,12 +1073,12 @@ function actions_installBlockType(block) {
             method: 'PUT'
           });
 
-        case 14:
-          _context.next = 20;
+        case 12:
+          _context.next = 18;
           break;
 
-        case 16:
-          _context.next = 18;
+        case 14:
+          _context.next = 16;
           return Object(external_this_wp_dataControls_["apiFetch"])({
             path: 'wp/v2/plugins',
             data: {
@@ -1049,44 +1088,44 @@ function actions_installBlockType(block) {
             method: 'POST'
           });
 
-        case 18:
+        case 16:
           response = _context.sent;
           // Add the `self` link for newly-installed blocks.
           links = response._links;
 
-        case 20:
-          _context.next = 22;
+        case 18:
+          _context.next = 20;
           return addInstalledBlockType(actions_objectSpread({}, block, {
             links: actions_objectSpread({}, block.links, {}, links)
           }));
 
-        case 22:
-          _context.next = 24;
+        case 20:
+          _context.next = 22;
           return loadAssets(assets);
 
-        case 24:
-          _context.next = 26;
+        case 22:
+          _context.next = 24;
           return Object(external_this_wp_dataControls_["select"])('core/blocks', 'getBlockTypes');
 
-        case 26:
+        case 24:
           registeredBlocks = _context.sent;
 
           if (!(!registeredBlocks.length || !registeredBlocks.filter(function (i) {
             return i.name === block.name;
           }).length)) {
-            _context.next = 29;
+            _context.next = 27;
             break;
           }
 
           throw new Error(Object(external_this_wp_i18n_["__"])('Error registering block. Try reloading the page.'));
 
-        case 29:
+        case 27:
           success = true;
-          _context.next = 40;
+          _context.next = 38;
           break;
 
-        case 32:
-          _context.prev = 32;
+        case 30:
+          _context.prev = 30;
           _context.t0 = _context["catch"](4);
           message = _context.t0.message || Object(external_this_wp_i18n_["__"])('An error occurred.'); // Errors we throw are fatal
 
@@ -1102,22 +1141,22 @@ function actions_installBlockType(block) {
             message = fatalAPIErrors[_context.t0.code];
           }
 
-          _context.next = 40;
+          _context.next = 38;
           return setErrorNotice(id, message, isFatal);
 
-        case 40:
-          _context.next = 42;
+        case 38:
+          _context.next = 40;
           return setIsInstalling(block.id, false);
 
-        case 42:
+        case 40:
           return _context.abrupt("return", success);
 
-        case 43:
+        case 41:
         case "end":
           return _context.stop();
       }
     }
-  }, _marked, null, [[4, 32]]);
+  }, _marked, null, [[4, 30]]);
 }
 /**
  * Action triggered to uninstall a block plugin.
@@ -1363,7 +1402,7 @@ var store = Object(external_this_wp_data_["registerStore"])(MODULE_KEY, storeCon
 var external_this_wp_element_ = __webpack_require__(0);
 
 // EXTERNAL MODULE: external {"this":["wp","plugins"]}
-var external_this_wp_plugins_ = __webpack_require__(63);
+var external_this_wp_plugins_ = __webpack_require__(76);
 
 // EXTERNAL MODULE: external {"this":["wp","blocks"]}
 var external_this_wp_blocks_ = __webpack_require__(10);
@@ -1401,7 +1440,7 @@ function AutoBlockUninstaller() {
 }
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 1 modules
-var slicedToArray = __webpack_require__(13);
+var slicedToArray = __webpack_require__(14);
 
 // EXTERNAL MODULE: external {"this":["wp","blockEditor"]}
 var external_this_wp_blockEditor_ = __webpack_require__(7);
@@ -1441,10 +1480,10 @@ function DownloadableBlockAuthorInfo(_ref) {
 /* harmony default export */ var downloadable_block_author_info = (DownloadableBlockAuthorInfo);
 
 // EXTERNAL MODULE: ./node_modules/@wordpress/icons/build-module/icon/index.js
-var build_module_icon = __webpack_require__(131);
+var build_module_icon = __webpack_require__(137);
 
 // EXTERNAL MODULE: ./node_modules/@wordpress/icons/build-module/library/star-filled.js
-var star_filled = __webpack_require__(281);
+var star_filled = __webpack_require__(286);
 
 // EXTERNAL MODULE: external {"this":["wp","primitives"]}
 var external_this_wp_primitives_ = __webpack_require__(6);
@@ -1465,7 +1504,7 @@ var starHalf = Object(external_this_wp_element_["createElement"])(external_this_
 /* harmony default export */ var star_half = (starHalf);
 
 // EXTERNAL MODULE: ./node_modules/@wordpress/icons/build-module/library/star-empty.js
-var star_empty = __webpack_require__(282);
+var star_empty = __webpack_require__(287);
 
 // CONCATENATED MODULE: ./node_modules/@wordpress/block-directory/build-module/components/block-ratings/stars.js
 
@@ -1890,10 +1929,10 @@ function DownloadableBlocksPanel(_ref) {
       debouncedSpeak = _ref.debouncedSpeak;
 
   if (false === hasPermission) {
-    debouncedSpeak(Object(external_this_wp_i18n_["__"])('No blocks found in your library. Please contact your site administrator to install new blocks.'));
+    debouncedSpeak(Object(external_this_wp_i18n_["__"])('No blocks found in your library.'));
     return Object(external_this_wp_element_["createElement"])("p", {
       className: "block-directory-downloadable-blocks-panel__description has-no-results"
-    }, Object(external_this_wp_i18n_["__"])('No blocks found in your library.'), Object(external_this_wp_element_["createElement"])("br", null), Object(external_this_wp_i18n_["__"])('Please contact your site administrator to install new blocks.'));
+    }, Object(external_this_wp_i18n_["__"])('No blocks found in your library.'));
   }
 
   if (typeof hasPermission === 'undefined' || isLoading || isWaiting) {
@@ -1991,7 +2030,7 @@ function InserterMenuDownloadableBlocksPanel() {
 /* harmony default export */ var inserter_menu_downloadable_blocks_panel = (InserterMenuDownloadableBlocksPanel);
 
 // EXTERNAL MODULE: external {"this":["wp","editPost"]}
-var external_this_wp_editPost_ = __webpack_require__(256);
+var external_this_wp_editPost_ = __webpack_require__(261);
 
 // CONCATENATED MODULE: ./node_modules/@wordpress/block-directory/build-module/components/compact-list/index.js
 
@@ -2107,6 +2146,13 @@ Object(external_this_wp_plugins_["registerPlugin"])('block-directory', {
 
 /***/ }),
 
+/***/ 45:
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["apiFetch"]; }());
+
+/***/ }),
+
 /***/ 5:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2129,17 +2175,53 @@ function _defineProperty(obj, key, value) {
 
 /***/ }),
 
+/***/ 50:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _asyncToGenerator; });
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
+
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+        args = arguments;
+    return new Promise(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+
+      _next(undefined);
+    });
+  };
+}
+
+/***/ }),
+
 /***/ 6:
 /***/ (function(module, exports) {
 
 (function() { module.exports = this["wp"]["primitives"]; }());
-
-/***/ }),
-
-/***/ 63:
-/***/ (function(module, exports) {
-
-(function() { module.exports = this["wp"]["plugins"]; }());
 
 /***/ }),
 
@@ -2150,17 +2232,17 @@ function _defineProperty(obj, key, value) {
 
 /***/ }),
 
+/***/ 76:
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["plugins"]; }());
+
+/***/ }),
+
 /***/ 9:
 /***/ (function(module, exports) {
 
 (function() { module.exports = this["wp"]["compose"]; }());
-
-/***/ }),
-
-/***/ 92:
-/***/ (function(module, exports) {
-
-(function() { module.exports = this["wp"]["notices"]; }());
 
 /***/ })
 

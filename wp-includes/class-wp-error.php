@@ -47,20 +47,16 @@ class WP_Error {
 	 *
 	 * @since 2.1.0
 	 *
-	 * @param string|int $code Error code
-	 * @param string $message Error message
-	 * @param mixed $data Optional. Error data.
+	 * @param string|int $code    Error code.
+	 * @param string     $message Error message.
+	 * @param mixed      $data    Optional. Error data.
 	 */
 	public function __construct( $code = '', $message = '', $data = '' ) {
 		if ( empty( $code ) ) {
 			return;
 		}
 
-		$this->errors[ $code ][] = $message;
-
-		if ( ! empty( $data ) ) {
-			$this->error_data[ $code ] = $data;
-		}
+		$this->add( $code, $message, $data );
 	}
 
 	/**
@@ -176,19 +172,32 @@ class WP_Error {
 	}
 
 	/**
-	 * Add an error or append additional message to an existing error.
+	 * Adds an error or appends an additional message to an existing error.
 	 *
 	 * @since 2.1.0
 	 *
-	 * @param string|int $code Error code.
-	 * @param string $message Error message.
-	 * @param mixed $data Optional. Error data.
+	 * @param string|int $code    Error code.
+	 * @param string     $message Error message.
+	 * @param mixed      $data    Optional. Error data.
 	 */
 	public function add( $code, $message, $data = '' ) {
 		$this->errors[ $code ][] = $message;
+
 		if ( ! empty( $data ) ) {
-			$this->error_data[ $code ] = $data;
+			$this->add_data( $data, $code );
 		}
+
+		/**
+		 * Fires when an error is added to a WP_Error object.
+		 *
+		 * @since 5.6.0
+		 *
+		 * @param string|int $code     Error code.
+		 * @param string     $message  Error message.
+		 * @param mixed      $data     Error data. Might be empty.
+		 * @param WP_Error   $wp_error The WP_Error object.
+		 */
+		do_action( 'wp_error_added', $code, $message, $data, $this );
 	}
 
 	/**
@@ -198,7 +207,7 @@ class WP_Error {
 	 *
 	 * @since 2.1.0
 	 *
-	 * @param mixed $data Error data.
+	 * @param mixed      $data Error data.
 	 * @param string|int $code Error code.
 	 */
 	public function add_data( $data, $code = '' ) {
